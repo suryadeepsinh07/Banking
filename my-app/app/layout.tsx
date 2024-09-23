@@ -13,6 +13,13 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const metadata: Metadata = {
+  title: "Horizon",
+  description: "Horizon is a mordern banking platform for eyeryone.",
+  icons:{
+    icon:'/icons/logo.svg'
+  }
+};
 
 export default function RootLayout({
   children,
