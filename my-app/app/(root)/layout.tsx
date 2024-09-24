@@ -4,12 +4,10 @@ export default function RootLayout({
     children: React.ReactNode;
   }>) {
     return (
-      <html lang="en">
-        <body>
+      <main className="flex h-screen w-full font-inter">
         SIDEBAR
           {children}
-        </body>
-      </html>
+          </main>
     );
   }
   
