@@ -47,7 +47,7 @@ const AuthForm = ({ type }: { type: string }) => {
             if(type==='sign-up')
             {
                 const userData={
-                    firstname:data.firstName!,
+                    firstName:data.firstName!,
                     lastName:data.lastName!,
                     address1:data.address1!,
                     city:data.city!,
