@@ -31,7 +31,7 @@ export const signIn = async ({ email, password }: signInProps) => {
     console.error('Error', error)
   }
 }
-export const signUp = async ({password ,...userData}: SignUpParams) => {
+export const signUp = async ({password , ...userData}: SignUpParams) => {
   const { email, firstName, lastName } = userData
   let newUserAccount;
   try {
@@ -112,12 +112,14 @@ export const createLinkToken = async (user: User) => {
       client_name: `${user.firstName} ${user.lastName}`,
       products: ['auth'] as Products[],
       language: 'en',
-      country_codes: ['US'] as CountryCode[],
+      country_codes: ['CA'] as CountryCode[],
     }
-    const response = await plaidClient.linkTokenCreate(tokenParams)
+
+    const response = await plaidClient.linkTokenCreate(tokenParams);
+
     return parseStringify({ linkToken: response.data.link_token })
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 export const createBankAccount = async ({ userId,
@@ -145,7 +147,7 @@ export const createBankAccount = async ({ userId,
     )
     return parseStringify(bankAccount)
   } catch (error) {
-
+    console.log(error)
   }
 }
 export const exchangePublicToken = async ({
